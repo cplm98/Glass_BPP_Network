@@ -29,7 +29,9 @@ class BPNetwork():
             low=0.001, high=1, size=(self.hidden_nodes, 1))
         self.bias_out = np.random.uniform(
             low=0.001, high=1, size=(self.out_nodes, 1))
+        self.velocity = 
         self.c = .1 # learning rate
+        self.beta = .9 # momentum
 
     def feed_forward(self, input_array, train="False"):  # feed forward works
         # gen hidden outputs
